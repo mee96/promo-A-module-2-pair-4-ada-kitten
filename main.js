@@ -1,11 +1,9 @@
 "user strict";
 
-console.log ("konichiwa, sekai");
-
-
+console.log("konichiwa, sekai");
 
 const nekoList = document.querySelector(".js-list");
-nekoList.innerHTML +=`<li class="card">
+nekoList.innerHTML += `<li class="card">
             <article>
               <img
                 class="card_img"
@@ -22,8 +20,6 @@ nekoList.innerHTML +=`<li class="card">
             </article>
           </li>`;
 
-
-
 nekoList.innerHTML += ` <li class="card">
             <img
               class="card_img"
@@ -38,7 +34,6 @@ nekoList.innerHTML += ` <li class="card">
               gatuna que se caracteriza por la «ausencia» de pelo.
             </p>
           </li>`;
-          
 
 nekoList.innerHTML += `<li class="card">
             <img
@@ -55,3 +50,15 @@ nekoList.innerHTML += `<li class="card">
             </p>
           </li> `;
 
+const jsbtnadd = document.querySelector(".js-btn-add");
+jsbtnadd.addEventListener("click", (Event) => {
+  const form = document.querySelector(".js-collapsed");
+  form.classList.remove("collapsed");
+});
+
+const cancelButton = document.querySelector(".button-cancel");
+cancelButton.addEventListener("click", (Event) => {
+  Event.preventDefault();
+  const form = document.querySelector(".js-collapsed");
+  form.classList.add("collapsed");
+});
