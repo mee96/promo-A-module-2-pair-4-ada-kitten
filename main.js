@@ -68,18 +68,57 @@ nekoList.innerHTML += `<li class="card neko3">
             </p>
           </li> `;
 
+         
+
+
+/*Ejercicio anterior, lo qutiamos porque usamos funciones
 const jsbtnadd = document.querySelector(".js-btn-add");
 jsbtnadd.addEventListener("click", (Event) => {
   const form = document.querySelector(".js-collapsed");
   form.classList.remove("collapsed");
 });
+cons
 
-const cancelButton = document.querySelector(".button-cancel");
+/*const cancelButton = document.querySelector(".button-cancel");
 cancelButton.addEventListener("click", (Event) => {
   Event.preventDefault();
   const form = document.querySelector(".js-collapsed");
   form.classList.add("collapsed");
-});
+});*/
+
+/* 
+Funcion para abrir en el boton de +:
+-hacer click
+-que se abra
+*/
+const jsbtnadd = document.querySelector(".js-btn-add");
+const newForm =document.querySelector(".js-collapsed");
+
+function showNewCatForm( ) {
+  newForm.classList.remove('collapsed');
+  console.log("apretar boton");
+};
+
+ jsbtnadd.addEventListener("click", showNewCatForm);
+
+const cancelButton = document.querySelector(".button-cancel");
+function hideNewCatForm() {
+  newForm.classList.add('collapsed');
+  console.log("apretar boton-cancelar"); 
+}
+cancelButton.addEventListener("click", hideNewCatForm);
+
+/* Funcion para añadir un nuevo michi:
+  -hacer click en añadir
+  -
+
+*/
+
+const buttonAdd = document.querySelector(".js-btn-newcat");
+function addNewKitten(event) {
+  console.log("Apretar añadir nuevo gato")
+}
+buttonAdd.addEventListener("click", addNewKitten);
 
 const searchButton = document.querySelector(".js_button-search");
 const descrInput = document.querySelector(".js_in_search_desc");
@@ -104,3 +143,13 @@ searchButton.addEventListener("click", (ev) => {
     Gato3.style.display = "block";
   }
 });
+
+
+/* ejercicio 3 dia 18/10 funciones I*/
+
+const newurl = document.querySelector(".js-newurl");
+const newname = document.querySelector(".js-newname");
+const newrace = document.querySelector(".js-newrace");
+const newdescrip = document.querySelector(".js-newdescrip");
+
+
