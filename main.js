@@ -10,9 +10,7 @@ const kittenDesc2 =
 const kittenDesc3 =
   "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.";
 
-const Gato1 = document.querySelector(".neko1");
-const Gato2 = document.querySelector(".neko2");
-const Gato3 = document.querySelector(".neko3");
+
 
 const kittenImg1 = "https://dev.adalab.es/gato-siames.webp";
 const kittenImg2 = "https://dev.adalab.es/sphynx-gato.webp";
@@ -120,27 +118,31 @@ function addNewKitten(event) {
 }
 buttonAdd.addEventListener("click", addNewKitten);
 
+const Gato1 = document.querySelector(".neko1");
+const Gato2 = document.querySelector(".neko2");
+const Gato3 = document.querySelector(".neko3");
+
 const searchButton = document.querySelector(".js_button-search");
 const descrInput = document.querySelector(".js_in_search_desc");
 
 searchButton.addEventListener("click", (ev) => {
-  ev.preventDefault();
+  ev.preventDefault(ev);
   const descrSearchText = descrInput.value;
   console.log(descrSearchText);
-  Gato1.style.display = "none";
-  Gato2.style.display = "none";
-  Gato3.style.display = "none";
+  Gato1.classList.add("collapsed");
+  Gato2.classList.add("collapsed");
+  Gato3.classList.add("collapsed");
 
   if (kittenDesc1.includes(descrSearchText)) {
-    Gato1.style.display = "block";
+    Gato1.classList.remove("collapsed");
   }
 
   if (kittenDesc2.includes(descrSearchText)) {
-    Gato2.style.display = "block";
+    Gato2.classList.remove("collapsed");
   }
 
   if (kittenDesc3.includes(descrSearchText)) {
-    Gato3.style.display = "block";
+    Gato3.classList.remove("collapsed");
   }
 });
 
