@@ -1,6 +1,7 @@
 "user strict";
 
 console.log("konichiwa, sekai");
+/* Comentamos por que en el ejercicio del dia 22/10 cambiamos el formato
 const kittenDesc1 =
   "Porte elegante, su patrón de color tan característico y sus ojosde un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.";
 
@@ -23,19 +24,39 @@ const kittenName3 = "Cielo".toUpperCase();
 const kittenRace1 = "Siamés";
 const kittenRace2 = "Sphynx";
 const kittenRace3 = "Maine Coon";
+*/
 
+const kittenData_1 = {
+  kittenImg1: 'https://dev.adalab.es/gato-siames.webp',
+  kittenName1: 'Anastacio',
+  kittenDesc1: ' Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.',
+  kittenRace1: 'Siamés',
+};
+
+const kittenData_2 = {
+  kittenImg2: "https://dev.adalab.es/sphynx-gato.webp",
+  kittenName2: "Fiona",
+  kittenDesc2: "Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.",
+  kittenRace2: "Sphynx",
+};
+const kittenData_3 = {
+  kittenImg3: "https://dev.adalab.es/maine-coon-cat.webp",
+  kittenName3: "Cielo",
+  kittenDesc3: "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.",
+  kittenRace3: "Maine Coon",
+};
 const nekoList = document.querySelector(".js-list");
 nekoList.innerHTML += `<li class="card neko1">
             <article>
               <img
                 class="card_img"
-                src= ${kittenImg1}
+                src= ${kittenData_1.kittenImg1}
                 alt="siames-cat"
               />
-              <h3 class="card_title">${kittenName1}</h3>
-              <h4 class="card_race">${kittenRace1}</h4>
+              <h3 class="card_title">${kittenData_1.kittenName1}</h3>
+              <h4 class="card_race">${kittenData_1.kittenRace1}</h4>
               <p class="card_description kittenDesc1">
-                ${kittenDesc1}
+                ${kittenData_1.kittenDesc1}
               </p>
             </article>
           </li>`;
@@ -43,26 +64,26 @@ nekoList.innerHTML += `<li class="card neko1">
 nekoList.innerHTML += ` <li class="card neko2">
             <img
               class="card_img"
-              src= ${kittenImg2}
+              src= ${kittenData_2.kittenImg2}
               alt="sphynx-cat"
             />
-            <h3 class="card_title">${kittenName2}</h3>
-            <h4 class="card_race">${kittenRace2}</h4>
+            <h3 class="card_title">${kittenData_2.kittenName2}</h3>
+            <h4 class="card_race">${kittenData_2.kittenRace2}</h4>
             <p class="card_description kittenDesc2">
-              ${kittenDesc2}
+              ${kittenData_2.kittenDesc2}
             </p>
           </li>`;
 
 nekoList.innerHTML += `<li class="card neko3">
             <img
               class="card_img"
-              src=${kittenImg3}
+              src=${kittenData_3.kittenImg3}
               alt="maine-coon-cat"
             />
-            <h3 class="card_title">${kittenName3}</h3>
-            <h4 class="card_race">${kittenRace3}</h4>
+            <h3 class="card_title">${kittenData_3.kittenName3}</h3>
+            <h4 class="card_race">${kittenData_3.kittenRace3}</h4>
             <p class="card_description kittenDesc3">
-              ${kittenDesc3}
+              ${kittenData_3.kittenDesc3}
             </p>
           </li> `;
 
@@ -99,6 +120,8 @@ function showNewCatForm( ) {
 
  jsbtnadd.addEventListener("click", showNewCatForm);
 
+
+ 
 const cancelButton = document.querySelector(".button-cancel");
 function hideNewCatForm() {
   newForm.classList.add('collapsed');
@@ -133,15 +156,15 @@ searchButton.addEventListener("click", (ev) => {
   Gato2.classList.add("collapsed");
   Gato3.classList.add("collapsed");
 
-  if (kittenDesc1.includes(descrSearchText)) {
+  if (kittenData_1.kittenDesc1.includes(descrSearchText)) {
     Gato1.classList.remove("collapsed");
   }
 
-  if (kittenDesc2.includes(descrSearchText)) {
+  if (kittenData_2.kittenDesc2.includes(descrSearchText)) {
     Gato2.classList.remove("collapsed");
   }
 
-  if (kittenDesc3.includes(descrSearchText)) {
+  if (kittenData_3.kittenDesc3.includes(descrSearchText)) {
     Gato3.classList.remove("collapsed");
   }
 });
