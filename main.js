@@ -26,68 +26,54 @@ const kittenRace2 = "Sphynx";
 const kittenRace3 = "Maine Coon";
 */
 
-const kittenData_1 = {
-  kittenImg1: 'https://dev.adalab.es/gato-siames.webp',
-  kittenName1: 'Anastacio',
-  kittenDesc1: ' Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.',
-  kittenRace1: 'Siamés',
-};
+const kittens =[
+{
+  kittenImg: 'https://dev.adalab.es/gato-siames.webp',
+  kittenName: 'Anastacio',
+  kittenDesc: ' Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.',
+  kittenRace: 'Siamés',
+},
+{
+  kittenImg: "https://dev.adalab.es/sphynx-gato.webp",
+  kittenName: "Fiona",
+  kittenDesc: "Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.",
+  kittenRace: "Sphynx",
+},
+{
+  kittenImg: "https://dev.adalab.es/maine-coon-cat.webp",
+  kittenName: "Cielo",
+  kittenDesc: "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.",
+  kittenRace: "Maine Coon",
+}
+]
 
-const kittenData_2 = {
-  kittenImg2: "https://dev.adalab.es/sphynx-gato.webp",
-  kittenName2: "Fiona",
-  kittenDesc2: "Produce fascinación y curiosidad. Exótico, raro, bello, extraño… hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.",
-  kittenRace2: "Sphynx",
-};
-const kittenData_3 = {
-  kittenImg3: "https://dev.adalab.es/maine-coon-cat.webp",
-  kittenName3: "Cielo",
-  kittenDesc3: "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.",
-  kittenRace3: "Maine Coon",
-};
-const nekoList = document.querySelector(".js-list");
-nekoList.innerHTML += `<li class="card neko1">
+const kittenDataList = (kittenObject) => {
+  const item = `<li class="card neko1">
             <article>
               <img
                 class="card_img"
-                src= ${kittenData_1.kittenImg1}
+                src= ${kittenObject.kittenImg}
                 alt="siames-cat"
               />
-              <h3 class="card_title">${kittenData_1.kittenName1}</h3>
-              <h4 class="card_race">${kittenData_1.kittenRace1}</h4>
+              <h3 class="card_title">${kittenObject.kittenName}</h3>
+              <h4 class="card_race">${kittenObject.kittenRace}</h4>
               <p class="card_description kittenDesc1">
-                ${kittenData_1.kittenDesc1}
+                ${kittenObject.kittenDesc}
               </p>
             </article>
-          </li>`;
+          </li>
+          `
+    return item;
+};
 
-nekoList.innerHTML += ` <li class="card neko2">
-            <img
-              class="card_img"
-              src= ${kittenData_2.kittenImg2}
-              alt="sphynx-cat"
-            />
-            <h3 class="card_title">${kittenData_2.kittenName2}</h3>
-            <h4 class="card_race">${kittenData_2.kittenRace2}</h4>
-            <p class="card_description kittenDesc2">
-              ${kittenData_2.kittenDesc2}
-            </p>
-          </li>`;
+const list = document.querySelector(".js-list");
 
-nekoList.innerHTML += `<li class="card neko3">
-            <img
-              class="card_img"
-              src=${kittenData_3.kittenImg3}
-              alt="maine-coon-cat"
-            />
-            <h3 class="card_title">${kittenData_3.kittenName3}</h3>
-            <h4 class="card_race">${kittenData_3.kittenRace3}</h4>
-            <p class="card_description kittenDesc3">
-              ${kittenData_3.kittenDesc3}
-            </p>
-          </li> `;
+const kittenList = () => {
+  list.innerHTML = kittenDataList(kittens[0]) + kittenDataList(kittens[1]) + kittenDataList(kittens[2]) 
+};
 
-         
+kittenList();
+
 
 
 /*Ejercicio anterior, lo qutiamos porque usamos funciones
